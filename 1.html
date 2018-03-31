@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+</head>
+<body>
+<script>
+
+    function setName(obj) {
+        obj.name = "xiaobai";
+        obj = new Object();
+        obj.name = "xiaoli";
+    }
+
+    var person = new Object();
+    setName(person);
+    alert(person.name)
+    /* 函数参数对象按照引用对象，重写obj时，第二个.name属性执行完 函数销毁 */
+
+    var s = "xiaoming";
+    alert(typeof s);
+    var b = 22;
+    alert(typeof b);
+    var c = true;
+    alert(typeof c);
+    var d = null;
+    alert(typeof d);
+    /*检测类型*/
+    /* instanceof 检测引用类型的值 person instanceof objece .exmp*/
+
+    var alice = 5;
+
+    function alicea() {
+        if (alice > 1) {
+            alert("长大了的alice")
+        }
+    }
+
+    alicea();
+    /*全局变量在作用域链的最后*/
+
+    var kn = "柯南";
+
+    function k() {
+        var xy = "新一";
+
+        function g() {
+            var dkn = xy;
+            xy = kn;
+            kn = dkn;
+        }
+
+        g();
+    }
+
+    /*函数内部可以通过作用域链访问外部参数，外部不能访问内部函数*/
+
+    for (var i = 0; i < 10; i++) {
+        kn + 1;
+    }
+    alert(i);
+    /*for变量在循环后存在执行环境中*/
+
+    var lili = "bue";
+
+    function getN(){
+        var lili="bobo";
+        return lili;
+    }
+
+    alert(getN());
+    /*作用域链的顺序*/
+
+    
+
+
+</script>
+</body>
+</html>
